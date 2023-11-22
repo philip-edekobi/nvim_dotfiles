@@ -23,7 +23,14 @@ lspconfig.gopls.setup {
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "javascript", "typescript" },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascript.jsx",
+    "typescrpt.tsx",
+    "javascriptreact",
+  },
   settings = {
     javascript = {
     },
@@ -37,6 +44,8 @@ lspconfig.pyright.setup {
   capabilities = capabilities,
   filetypes = { "python" },
 }
+
+lspconfig.clangd.setup {}
 
 lspconfig.intelephense.setup {
   on_attach = on_attach,
