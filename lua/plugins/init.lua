@@ -25,7 +25,7 @@ local default_plugins = {
     end,
     config = function(_, opts)
       require "base46.term"
-      require("nvterm").setup(opts)
+      require("nvterm").setup(opt)
     end,
   },
 
