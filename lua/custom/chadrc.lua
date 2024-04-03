@@ -1,7 +1,7 @@
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = { theme = 'yoru' }
+M.ui = { theme = 'rxyhn' }
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 
