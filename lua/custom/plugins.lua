@@ -30,17 +30,44 @@ local plugins = {
       require("core.utils").load_mappings("dap")
     end
   },
+  -- {
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   ft = {
+  --     "go",
+  --     "javascript",
+  --     "typescript",
+  --     "python",
+  --   },
+  --   opts = function()
+  --     return require "custom.configs.null-ls"
+  --   end,
+  -- },
   {
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     ft = {
       "go",
       "javascript",
       "typescript",
       "python",
     },
-    opts = function()
+    opts = function(_, opts)
       return require "custom.configs.null-ls"
-    end,
+			-- local nls = require('null-ls')
+			-- opts.sources = vim.list_extend(opts.sources or {}, {
+			-- 	nls.builtins.code_actions.gitsigns,
+			-- 	-- go
+			-- 	nls.builtins.code_actions.gomodifytags,
+			-- 	nls.builtins.code_actions.impl,
+			-- 	nls.builtins.diagnostics.golangci_lint,
+			-- 	-- ts
+			-- 	nls.builtins.formatting.biome,
+			-- 	require('typescript.extensions.null-ls.code-actions'),
+			-- 	-- other
+			-- 	nls.builtins.formatting.stylua,
+			-- 	nls.builtins.formatting.shfmt,
+			-- })
+			-- return opts
+		end,
   },
   {
     "olexsmir/gopher.nvim",

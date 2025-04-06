@@ -27,13 +27,13 @@ local opts = {
         "txt",
       },
     }),
-    null_ls.builtins.formatting.autopep8.with({
+    null_ls.builtins.formatting.black.with({
       filetypes = {
         "python"
       }
     }),
   },
-  on_attach = function(client, bufnr)
+   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({
         group = augroup,

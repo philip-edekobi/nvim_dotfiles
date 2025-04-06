@@ -39,6 +39,25 @@ lspconfig.tsserver.setup {
   },
 }
 
+lspconfig.ts_ls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "javascript",
+    "typescript",
+    "typescriptreact",
+    "javascript.jsx",
+    "typescrpt.tsx",
+    "javascriptreact",
+  },
+  settings = {
+    javascript = {
+    },
+    typescript = {
+    },
+  },
+}
+
 lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
