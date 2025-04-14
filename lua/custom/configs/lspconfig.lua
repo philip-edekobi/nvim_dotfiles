@@ -39,32 +39,27 @@ lspconfig.ts_ls.setup {
   },
 }
 
-lspconfig.ts_ls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascript.jsx",
-    "typescrpt.tsx",
-    "javascriptreact",
-  },
-  settings = {
-    javascript = {
-    },
-    typescript = {
-    },
-  },
-}
-
 lspconfig.pyright.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "python" },
 }
 
-lspconfig.clangd.setup {}
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "c",
+    "cpp",
+  },
+}
+
+lspconfig.buf.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"buf"},
+  filetypes = { "proto" },
+}
 
 lspconfig.intelephense.setup {
   on_attach = on_attach,
