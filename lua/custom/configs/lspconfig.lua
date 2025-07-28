@@ -45,6 +45,19 @@ lspconfig.pyright.setup {
   filetypes = { "python" },
 }
 
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "rs" },
+   settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      },
+    },
+  },
+}
+
 lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -52,6 +65,14 @@ lspconfig.clangd.setup {
     "c",
     "cpp",
   },
+}
+
+lspconfig.java_language_server.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "java" },
+  root_markers = { "build.gradle", "build.gradle.kts", "pom.xml", ".git" },
+  settings = {},
 }
 
 lspconfig.buf.setup {
