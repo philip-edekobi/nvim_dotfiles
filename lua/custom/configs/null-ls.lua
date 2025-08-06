@@ -3,12 +3,19 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 local opts = {
   sources = {
-    null_ls.builtins.formatting.clang_format.with({
+    null_ls.builtins.formatting.black.with({
       filetypes = {
-        "c",
-        "cpp",
-        "proto",
-      },
+        "python"
+      }
+    }),
+    null_ls.builtins.formatting.clang_format.with({
+      filetypes = { "c", "cpp", "java", "h", "cxx", "hxx", "cs", "cuda", "proto" },
+    }),
+    null_ls.builtins.formatting.dxfmt.with({
+      filetypes = { "rust" },
+    }),
+    null_ls.builtins.formatting.gleam_format.with({
+      filetypes = { "gleam" },
     }),
     null_ls.builtins.formatting.gofumpt.with({
       filetypes = { "go" },
@@ -18,6 +25,9 @@ local opts = {
     }),
     null_ls.builtins.formatting.golines.with({
       filetypes = { "go" },
+    }),
+    null_ls.builtins.formatting.leptosfmt.with({
+      filetypes = { "rust" },
     }),
     null_ls.builtins.formatting.prettier.with({
       filetypes = {
@@ -33,11 +43,6 @@ local opts = {
         "md",
         "txt",
       },
-    }),
-    null_ls.builtins.formatting.black.with({
-      filetypes = {
-        "python"
-      }
     }),
   },
    on_attach = function(client, bufnr)

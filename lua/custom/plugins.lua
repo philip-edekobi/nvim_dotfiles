@@ -22,6 +22,12 @@ local plugins = {
     end
   },
   {
+    "mfussenegger/nvim-jdtls",
+    config = function ()
+      require "plugins.configs.jdtls"
+    end,
+  },
+  {
     "dreamsofcode-io/nvim-dap-go",
     ft = "go",
     dependencies = "mfussenegger/nvim-dap",
@@ -30,43 +36,27 @@ local plugins = {
       require("core.utils").load_mappings("dap")
     end
   },
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   ft = {
-  --     "go",
-  --     "javascript",
-  --     "typescript",
-  --     "python",
-  --   },
-  --   opts = function()
-  --     return require "custom.configs.null-ls"
-  --   end,
-  -- },
   {
     "nvimtools/none-ls.nvim",
     ft = {
+      "c",
+      "h",
+      "cpp",
+      "cxx",
+      "hxx",
+      "cpp",
       "go",
+      "gleam",
       "javascript",
-      "typescript",
+      "java",
+      "lua",
+      "proto",
       "python",
+      "rust",
+      "typescript",
     },
     opts = function(_, opts)
       return require "custom.configs.null-ls"
-			-- local nls = require('null-ls')
-			-- opts.sources = vim.list_extend(opts.sources or {}, {
-			-- 	nls.builtins.code_actions.gitsigns,
-			-- 	-- go
-			-- 	nls.builtins.code_actions.gomodifytags,
-			-- 	nls.builtins.code_actions.impl,
-			-- 	nls.builtins.diagnostics.golangci_lint,
-			-- 	-- ts
-			-- 	nls.builtins.formatting.biome,
-			-- 	require('typescript.extensions.null-ls.code-actions'),
-			-- 	-- other
-			-- 	nls.builtins.formatting.stylua,
-			-- 	nls.builtins.formatting.shfmt,
-			-- })
-			-- return opts
 		end,
   },
   {

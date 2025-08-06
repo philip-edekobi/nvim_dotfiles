@@ -20,6 +20,14 @@ lspconfig.gopls.setup {
   },
 }
 
+lspconfig.jdtls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = { "/home/luxurydev/work/install_scripts/jls/org.eclipse.jdt.ls.product/target/repository/bin/jdtls" },
+  root_dir = vim.fs.dirname(vim.fs.find({'gradlew', '.git', 'mvnw'}, { upward = true })[1]),
+  filetypes = { "java" },
+}
+
 lspconfig.ts_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -45,45 +53,40 @@ lspconfig.pyright.setup {
   filetypes = { "python" },
 }
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "rs" },
-   settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false;
-      },
-    },
-  },
-}
-
 lspconfig.clangd.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {
     "c",
+    "h",
     "cpp",
+    "cxx",
+    "hxx",
   },
 }
 
-lspconfig.java_language_server.setup {
+lspconfig.gleam.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = { "java" },
-  root_markers = { "build.gradle", "build.gradle.kts", "pom.xml", ".git" },
-  settings = {},
-}
-
-lspconfig.buf.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  cmd = {"buf"},
-  filetypes = { "proto" },
+  cmd = { "gleam", "lsp" },
+  filetypes = { "gleam" },
 }
 
 lspconfig.intelephense.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "php" },
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  -- filetypes = { "rust" },
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      },
+    }
+  },
 }
