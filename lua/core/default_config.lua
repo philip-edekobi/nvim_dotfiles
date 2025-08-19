@@ -12,7 +12,7 @@ M.ui = {
   hl_override = {
   },
   changed_themes = {},
-  theme_toggle = { "nightfox", "radium" },
+  theme_toggle = { "nightfox", "decay" },
   theme = "onedark", -- default theme
   transparency = true,
   lsp_semantic_tokens = true, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
@@ -40,7 +40,6 @@ M.ui = {
     overriden_modules = nil,
   },
 
-  -- lazyload it when there are 1+ buffers
   tabufline = {
     show_numbers = false,
     enabled = true,
